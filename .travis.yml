@@ -3,6 +3,7 @@ node_js:
   - "5"
 before_script:
 - npm install -g shelljs
+- npm install yargs
 script: shjs ./build.js -g
 branches:
   only:
