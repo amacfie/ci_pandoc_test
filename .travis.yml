@@ -1,12 +1,16 @@
+sudo: required
+dist: trusty
+
 language: node_js
 node_js:
   - "5"
+before_install:
+  - sudo apt-get update -q
+  - sudo apt-get install -y pandoc
+  - sudo apt-get install -y pandoc-citeproc
 before_script:
 - npm install -g shelljs
 - npm install yargs
-install:
-- apt-get update
-- apt-get -yq --no-install-suggests --no-install-recommends --force-yes install pandoc pandoc-citeproc
 script: shjs ./build.js -g
 branches:
   only:
