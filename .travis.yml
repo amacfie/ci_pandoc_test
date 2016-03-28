@@ -3,7 +3,7 @@ node_js:
   - "5"
 before_script:
 - npm install -g shelljs
-script: ./build.js -g
+script: shjs ./build.js -g
 branches:
   only:
   - master
