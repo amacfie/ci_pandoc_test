@@ -4,6 +4,7 @@ node_js:
 before_script:
 - npm install -g shelljs
 - npm install yargs
+- apt-get update
 script: shjs ./build.js -g
 branches:
   only:
