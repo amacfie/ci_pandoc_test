@@ -17,9 +17,11 @@ if( env['TRAVIS_PULL_REQUEST'] === 'true' ) {
   exit(0);
 }
 
-exec('pandoc -s ./*.md --mathjax -o ./out/math.html --bibliography=test.bib');
+exec('pandoc -s ./math.md --mathjax -o ./out/math.html --bibliography=./test.bib');
+console.log('Build complete.');
 
 if( argv.g ) {
+  console.log('Travis CI building...');
   exec('rm -rf ../gh-pages');
 
   exec('git clone -b gh-pages https://${GH_TOKEN}@github.com/amacfie/ci_pandoc_test.git ../gh-pages');
@@ -31,7 +33,7 @@ if( argv.g ) {
   // since repository was cloned in write mode with token auth - we can push there
   cd('../gh-pages');
   exec('git config user.email "amacfie@sent.com"');
-  exec('git config user.name "amacfie"');
+  exec('git config user.name "Andrew MacFie"');
   exec('git add -A .');
   exec('git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"');
   exec('git push --quiet origin gh-pages > /dev/null 2>&1');
