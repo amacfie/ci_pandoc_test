@@ -17,6 +17,7 @@ if( env['TRAVIS_PULL_REQUEST'] === 'true' ) {
   exit(0);
 }
 
+exec('mkdir ./out');
 exec('pandoc -s ./math.md --mathjax -o ./out/math.html --bibliography=./test.bib');
 console.log('Build complete.');
 
