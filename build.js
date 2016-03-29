@@ -18,7 +18,7 @@ if( env['TRAVIS_PULL_REQUEST'] === 'true' ) {
 }
 
 exec('mkdir ./out');
-exec('pandoc -s ./math.md --mathjax -o ./out/math.html --bibliography=./test.bib');
+exec('pandoc -s ./math.md --mathjax -H html_head.html -c stylesheets/stylesheet.css -o ./out/math.html --bibliography=./test.bib');
 console.log('Build complete.');
 
 if( argv.g ) {
