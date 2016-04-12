@@ -17,7 +17,8 @@ before_install:
   - ~/.cabal/bin/cabal sandbox init
   - ~/.cabal/bin/cabal install pandoc-crossref
 #  - ~/.cabal/bin/cabal install pandoc-citeproc
-  - sudo apt-get install -y pandoc-citeproc
+  - wget "http://http.us.debian.org/debian/pool/main/h/haskell-pandoc-citeproc/pandoc-citeproc_0.9-1_amd64.deb"
+  - sudo dpkg -i pandoc-citeproc_0.9-1_amd64.deb
   - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
 before_script:
