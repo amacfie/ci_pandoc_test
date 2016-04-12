@@ -17,7 +17,7 @@ before_install:
   - ~/.cabal/bin/cabal sandbox init
   - ~/.cabal/bin/cabal install pandoc-crossref
 #  - ~/.cabal/bin/cabal install pandoc-citeproc
-  - sudo apt-get install pandoc-citeproc
+  - sudo apt-get install -y pandoc-citeproc
   - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
 before_script:
@@ -33,3 +33,4 @@ env:
 
 # comment
 # citeproc isn't working https://github.com/jgm/pandoc-citeproc/issues/153
+# this didn't work https://github.com/lambdabot/lambdabot/issues/90
