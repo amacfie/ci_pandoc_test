@@ -14,8 +14,8 @@ before_install:
   - cd pandoc-build
   - ~/.cabal/bin/cabal sandbox init
   - ~/.cabal/bin/cabal install pandoc-crossref
-  - ~/.cabal/bin/cabal install pandoc-citeproc
-  - PATH=${PATH}:`pwd`
+  - ~/.cabal/bin/cabal install pandoc-citeproc --constraint='network<2.6'
+  - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
 before_script:
 - npm install -g shelljs
