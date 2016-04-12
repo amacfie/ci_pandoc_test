@@ -7,7 +7,7 @@ node_js:
 before_install:
   - sudo apt-get update -q
   - sudo apt-get install -y python-pip
-  - pip install pandoc-numbering
+  - sudo pip install pandoc-numbering
   - sudo apt-get install -y ghc
   - sudo apt-get install -y cabal-install
   - cabal update
