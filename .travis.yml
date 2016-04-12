@@ -6,8 +6,13 @@ node_js:
   - "5"
 before_install:
   - sudo apt-get update -q
-  - sudo apt-get install -y pandoc
-  - sudo apt-get install -y pandoc-citeproc
+  - sudo apt-get install -y ghc6
+  - mkdir pandoc-build
+  - cd pandoc-build
+  - cabal sandbox init
+  - cabal install pandoc-crossref
+  - cabal install pandoc-citeproc
+  - cd ../
 before_script:
 - npm install -g shelljs
 - npm install yargs
