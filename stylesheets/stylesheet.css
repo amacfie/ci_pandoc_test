@@ -4,12 +4,28 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lato:700,700italic|Istok+Web:400,700,400italic,700italic&subset=latin,latin-ext,cyrillic-ext,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic|Ledger|Cardo:400,400italic&subset=latin,latin-ext);
+@font-face {
+  font-family: 'MJX_Main';
+    src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot'); /* IE9 Compat Modes */
+    src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot?iefix') format('eot'),
+      url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff')  format('woff'),
+      url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf')  format('opentype'),
+      url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/svg/MathJax_Main-Regular.svg#MathJax_Main-Regular') format('svg');
+}
 
 /* general */
 
+/*
 body {
     font-family: 'Istok Web', sans-serif;
 }
+*/
+
+body {
+  font-family: 'MJX_Main', serif;
+  font-size: 120%;
+}
+
 
 a:link {
     text-decoration: none;
@@ -125,14 +141,18 @@ h3, h4 {
     text-transform: uppercase; /* uppercase */
     /*font-variant: small-caps;*/ /* small caps */
     letter-spacing: 1px;
+    font-family: 'Istok Web', sans-serif;
 }
 
 h3 {
     margin-top: 45px;
+    font-family: 'Istok Web', sans-serif;
+
 }
 
 h4 {
     margin-bottom: 15px;
+    font-family: 'Istok Web', sans-serif;
 }
 
 /* article */
@@ -147,6 +167,18 @@ ul li {
 
 ul ul li {
     list-style: circle url('../images/bullet_dash.png');
+}
+
+ul.pseudocode ul li {
+    list-style: none;
+}
+ul.pseudocode li {
+    list-style: none;
+}
+
+/* pseudocode indenting */
+ul.pseudocode ul {
+  padding-left: 20px;
 }
 
 #viewSource {
@@ -196,7 +228,6 @@ blockquote {
 /* code */
 
 code {
-    font-family: 'Monaco', Inconsolata, Courier, monospace;
     font-size: 9pt;
 }
 
@@ -214,15 +245,17 @@ code {
     color: #B84444;
 }
 
-pre {
-    position: relative;
-    margin-bottom: 24px;
-    border-radius: 3px;
-    background: #FFF;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
+pre, .pseudocode {
+  font-family: Consolas, 'Monaco', Inconsolata, Courier, monospace;
+  font-size: 1rem;
+  position: relative;
+  margin-bottom: 24px;
+  border-radius: 3px;
+  background: #FFF;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
 
 pre code {
@@ -250,6 +283,9 @@ pre code.has-numbering {
     font-size: 9pt;
     color: #AAA;
 }
+.pre-numbering li {
+    list-style: none;
+}
 
 /* misc */
 
@@ -270,13 +306,17 @@ pre code.has-numbering {
     /* margin-top and margin-bottom same as p */
     margin-bottom: 16px;
     margin-top: 16px;
-    padding: 24px 30px 3px 30px;
+    padding: 3px 30px 3px 30px;
     border: 1px solid #f0f0f0;
     border-radius: 4px;
     font-style: italic;
     background-color: #fff;
     background-position: top left;
     background-repeat: no-repeat;
+}
+
+.theorem > p:nth-child(1), .theorem > p:nth-child(2) {
+  display: inline;
 }
 
 .theorem strong, .lemma strong, .remark strong, .corollary strong, .proposition
@@ -289,9 +329,11 @@ strong, .notation strong, .definition strong {
     font-style: normal;
 }
 
+/*
 .theorem {
     background-image: url('../images/theorem.png');
 }
+*/
 
 .lemma {
     background-image: url('../images/lemma.png');
