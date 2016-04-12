@@ -6,7 +6,7 @@ node_js:
   - "5"
 before_install:
   - sudo apt-get update -q
-  - sudo apt-get install -y ghc6
+  - sudo apt-get install -y ghc
   - mkdir pandoc-build
   - cd pandoc-build
   - cabal sandbox init
