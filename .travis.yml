@@ -7,11 +7,14 @@ node_js:
 before_install:
   - sudo apt-get update -q
   - sudo apt-get install -y ghc
+  - sudo apt-get install -y cabal-install
+  - cabal update
   - mkdir pandoc-build
   - cd pandoc-build
   - cabal sandbox init
   - cabal install pandoc-crossref
   - cabal install pandoc-citeproc
+  - PATH=${PATH}:`pwd`
   - cd ../
 before_script:
 - npm install -g shelljs
