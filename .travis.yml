@@ -9,11 +9,12 @@ before_install:
   - sudo apt-get install -y ghc
   - sudo apt-get install -y cabal-install
   - cabal update
+  - cabal install cabal-install
   - mkdir pandoc-build
   - cd pandoc-build
-  - cabal sandbox init
-  - cabal install pandoc-crossref
-  - cabal install pandoc-citeproc
+  - ~/.cabal/bin/cabal sandbox init
+  - ~/.cabal/bin/cabal install pandoc-crossref
+  - ~/.cabal/bin/cabal install pandoc-citeproc
   - PATH=${PATH}:`pwd`
   - cd ../
 before_script:
