@@ -16,7 +16,7 @@ before_install:
   - cd pandoc-build
   - ~/.cabal/bin/cabal sandbox init
   - ~/.cabal/bin/cabal install pandoc-crossref
-  - ~/.cabal/bin/cabal install pandoc-citeproc
+  - ~/.cabal/bin/cabal install pandoc-citeproc --constraint "network-uri == 2.6.0.1"
   - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
 before_script:
