@@ -20,7 +20,7 @@ before_install:
   - ~/.cabal/bin/cabal install pandoc-crossref
   - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
-# cabal pkg for pandoc-citeproc is broken ()
+# cabal pkg for pandoc-citeproc is broken
 # (https://github.com/jgm/pandoc-citeproc/issues/153)
 # get Ubuntu 16.04 pandoc-citeproc pkg (v0.9)
 # http://askubuntu.com/a/103338/130091
