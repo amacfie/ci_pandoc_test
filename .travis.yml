@@ -17,7 +17,7 @@ before_install:
   - ~/.cabal/bin/cabal install pandoc-crossref
   - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
-  - sudo echo -e "Package: pandoc-citeproc\nPin: release n=xenial\nPin-Priority: 990\n\nPackage: *\nPin: release n=trusty\nPin-Priority: 900\n\nPackage: *\nPin: release o=Ubuntu\nPin-Priority: -10" > /etc/apt/preferences
+  - "sudo echo -e 'Package: pandoc-citeproc\nPin: release n=xenial\nPin-Priority: 990\n\nPackage: *\nPin: release n=trusty\nPin-Priority: 900\n\nPackage: *\nPin: release o=Ubuntu\nPin-Priority: -10' > /etc/apt/preferences"
   - sudo cp /etc/apt/sources.list /etc/apt/sources.list.d/xenial.list
   - sudo sed -i 's/trusty/xenial/g' /etc/apt/sources.list.d/xenial.list
   - sudo apt-get update -q
