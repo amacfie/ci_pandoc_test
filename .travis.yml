@@ -12,18 +12,16 @@ before_install:
   - sudo apt-get install -y cabal-install
   - cabal update
   - cabal install cabal-install
-  - mkdir pandoc-build
-  - cd pandoc-build
+  - mkdir pandoc-build ; cd pandoc-build
   - ~/.cabal/bin/cabal sandbox init
   - ~/.cabal/bin/cabal install pandoc-crossref
-#  - ~/.cabal/bin/cabal install pandoc-citeproc
-  - sudo apt-get install -y gdebi-core
-  - wget "http://http.us.debian.org/debian/pool/main/i/icu/libicu55_55.1-7_amd64.deb"
-  - sudo gdebi libicu55_55.1-7_amd64.deb
-  - wget "http://http.us.debian.org/debian/pool/main/h/haskell-pandoc-citeproc/pandoc-citeproc_0.9-1_amd64.deb"
-  - sudo gdebi pandoc-citeproc_0.9-1_amd64.deb
   - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
+  - sudo echo -e "Package: pandoc-citeproc\nPin: release n=xenial\nPin-Priority: 990\n\nPackage: *\nPin: release n=trusty\nPin-Priority: 900\n\nPackage: *\nPin: release o=Ubuntu\nPin-Priority: -10" > /etc/apt/preferences
+  - sudo cp /etc/apt/sources.list /etc/apt/sources.list.d/xenial.list
+  - sudo sed -i 's/trusty/xenial/g' /etc/apt/sources.list.d/xenial.list
+  - sudo apt-get update -q
+  - sudo apt-get install -y pandoc-citeproc -t xenial
 before_script:
 - npm install -g shelljs
 - npm install yargs
