@@ -18,9 +18,9 @@ if( env['TRAVIS_PULL_REQUEST'] === 'true' ) {
 }
 
 exec('mkdir ./out');
-exec('pandoc -s ./math.md --mathjax -N -H html_head.html' +
+exec('pandoc -s ./math.md --mathjax --number-sections -H html_head.html' +
      ' -c stylesheets/stylesheet.css -o ./out/math.html ' +
-     '--bibliography=./test.bib -F pandoc-crossref');
+     '--bibliography=./test.bib -F pandoc-crossref --filter pandoc-numbering');
 console.log('Build complete.');
 
 if( argv.g ) {

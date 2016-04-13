@@ -6,21 +6,29 @@ node_js:
   - "5"
 before_install:
   - sudo apt-get update -q
+# install pandoc-numbering filter
   - sudo apt-get install -y python-pip
   - sudo pip install pandoc-numbering
   - sudo apt-get install -y ghc
   - sudo apt-get install -y cabal-install
   - cabal update
+# install latest cabal locally
   - cabal install cabal-install
   - mkdir pandoc-build ; cd pandoc-build
   - ~/.cabal/bin/cabal sandbox init
+# install pandoc and pandoc-crossref filter
   - ~/.cabal/bin/cabal install pandoc-crossref
   - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
+# cabal pkg for pandoc-citeproc is broken ()
+# (https://github.com/jgm/pandoc-citeproc/issues/153)
+# get Ubuntu 16.04 pandoc-citeproc pkg (v0.9)
+# http://askubuntu.com/a/103338/130091
   - "sudo echo -e 'Package: pandoc-citeproc\\nPin: release n=xenial\\nPin-Priority: 990\\n\\nPackage: *\\nPin: release n=trusty\\nPin-Priority: 900\\n\\nPackage: *\\nPin: release o=Ubuntu\\nPin-Priority: -10' | sudo tee /etc/apt/preferences"
   - sudo cp /etc/apt/sources.list /etc/apt/sources.list.d/xenial.list
   - sudo sed -i 's/trusty/xenial/g' /etc/apt/sources.list.d/xenial.list
   - sudo apt-get update -q
+# install pandoc-citeproc filter
   - sudo apt-get install -y pandoc-citeproc -t xenial
 before_script:
 - npm install -g shelljs
@@ -32,7 +40,3 @@ branches:
 env:
   global:
     secure: oDfqyuXQWVwqGHmZxp8kkViEkAa1lh4jH3TzuE9iLKrGk8YgGq0gq+519n+/WXFY9Iv+yHVfJFFV/wRyrE+NKMRuVguVeU+gyqrTTYbIxOGaJon3WkjyBaRMUjdqzQ70sKik+0XO/eKvXwJm800+ubvIk8b2liQRT7ZZ4fx8SH35XpQg4ILREJIJlK/AM3pv5FE8pGGs77YIn/TlpSLLesQLIFZey3jnhgRjVFLxXTQ9i++IycrzXEeB+utPpyWXG8JoHHIf3TUKM3n2ajeAwVzlyEnEUROw2dPeVP45a5kfpP9NcaM797wXNe7R8SkJCIqu3OCA8p/NwamuVTRlrqUjRLmWkgdUak5AIzdDjmKXCr3Vm+4+90/XT9vkb39sZupjpqyVkB7V7C5IyfTKWsF5F8TUcadj18yqCX/Bm3Cxw058oQwn5Rx+f6zvh7ZJ3IZEpBeBjSqKI82/UrOoaoCWnfop1x+MrmB0Ktqe5WP9QWUJxjaFzBhw7GiUgecOnfP/oCcBH2sUVh0f6p8Mjdjga5wkgFHRu3290v0DUEjcbywtCOFD0PNezI/8KMIadzrLPm4lDjfOBYa2Er/PMCe6S7UBE39GGU8iaUs0pucCkNF7PgxC8Izi7HvTr6hsSeBHE2+Jtm8uOay7WxbInP0ijH2SdLIgUMn90HTKbEY=
-
-# comment
-# citeproc isn't working https://github.com/jgm/pandoc-citeproc/issues/153
-# this didn't work https://github.com/lambdabot/lambdabot/issues/90
