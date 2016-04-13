@@ -7,41 +7,47 @@
   <title>Pandoc math demos</title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="stylesheets/stylesheet.css" type="text/css" />
-  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
   <script type="text/javascript" src="javascripts/style.js"></script>
+  <script type="text/javascript" src="javascripts/pseudocode.js"></script>
 </head>
 <body>
 <div id="header">
 <h1 class="title">Pandoc math demos</h1>
 </div>
-<h1 id="this-is-a-heading">This is a heading</h1>
-<p><span class="math">\(a^2 + b^2 = c^2\)</span></p>
-<p><span class="math">\(v(t) = v_0 + \frac{1}{2}at^2\)</span></p>
-<p><span class="math">\(\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}\)</span></p>
-<p><span class="math">\(\exists x \forall y (Rxy \equiv Ryx)\)</span></p>
-<p><span class="math">\(p \wedge q \models p\)</span></p>
-<p><span class="math">\(\Box\diamond p\equiv\diamond p\)</span></p>
-<p><span class="math">\(\int_{0}^{1} x dx = \left[ \frac{1}{2}x^2 \right]_{0}^{1} = \frac{1}{2}\)</span></p>
-<p><span class="math">\(e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = \lim_{n\rightarrow\infty} (1+x/n)^n\)</span></p>
-<h1 id="next-heading">Next heading</h1>
-
-<ol style="list-style-type: example">
-<li><span class="math">\[x^{T}F x&#39;=0\]</span></li>
+<h1 id="this-is-a-heading"><span class="header-section-number">1</span> This is a heading</h1>
+<p><span class="math inline">\(a^2 + b^2 = c^2\)</span></p>
+<p><span class="math inline">\(v(t) = v_0 + \frac{1}{2}at^2\)</span></p>
+<p><span class="math inline">\(\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}\)</span></p>
+<p><span class="math inline">\(\exists x \forall y (Rxy \equiv Ryx)\)</span></p>
+<p><span class="math inline">\(p \wedge q \models p\)</span></p>
+<p><span class="math inline">\(\Box\diamond p\equiv\diamond p\)</span></p>
+<p><span class="math inline">\(\int_{0}^{1} x dx = \left[ \frac{1}{2}x^2 \right]_{0}^{1} = \frac{1}{2}\)</span></p>
+<p><span class="math inline">\(e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = \lim_{n\rightarrow\infty} (1+x/n)^n\)</span></p>
+<h1 id="next-heading"><span class="header-section-number">2</span> Next heading</h1>
+\begin{equation} \label{eq:hi}
+  e = e
+\end{equation}
+<ol class="example" style="list-style-type: decimal">
+<li><span class="math display">\[x^{T}F x&#39;=0\]</span></li>
 </ol>
 <p>Equation (1) shows...</p>
 <p><span class="citation">(Knuth 1997)</span></p>
 <div id="hi" class="theorem">
-Given a field <span class="math">\(F\)</span>...
+<p>Given a field <span class="math inline">\(F\)</span>...</p>
 </div>
 In <a href="#this-is-a-heading">an earlier section</a> <!-- p tag required -->
-<div class="proof"><p>
+<div class="proof">
+<p>
 Omitted. Lorem ipsum.
-</p></div>
-
-<div class="references">
-<h1>References</h1>
+</p>
+</div>
+<h1 id="references" class="unnumbered">References</h1>
+<div id="refs" class="references">
+<div id="ref-knut">
 <p>Knuth, Donald E. 1997. <em>The Art of Computer Programming, Vol. 1</em>. Addison-Wesley, Reading, MA.</p>
+</div>
 </div>
 </body>
 </html>
