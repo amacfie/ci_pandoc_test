@@ -98,8 +98,9 @@ main {
 }
 
 .github {
-    margin-top: 34px;
-    width: 100%;
+  font-family: 'Istok Web', sans-serif;
+  margin-top: 34px;
+  width: 100%;
 }
 
 footer {
