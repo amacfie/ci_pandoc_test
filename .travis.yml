@@ -33,7 +33,7 @@ before_install:
 before_script:
 - npm install shelljs
 - npm install yargs
-script: shjs ./build.js -g
+script: node ./build.js -g
 branches:
   only:
   - master
