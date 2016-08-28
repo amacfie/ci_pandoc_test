@@ -5,24 +5,19 @@ language: node_js
 node_js:
   - "5"
 before_install:
-  - "sudo echo -e 'deb http://ppa.launchpad.net/hvr/ghc/ubuntu trusty main' | sudo tee /etc/apt/sources.list.d/extra-ppas.list"
-  - "sudo echo -e 'deb-src http://ppa.launchpad.net/hvr/ghc/ubuntu trusty main' | sudo tee /etc/apt/sources.list.d/extra-ppas.list"
-  - sudo apt-get update -q
-# install pandoc-numbering filter
-  - sudo apt-get install -y python-pip
-  - sudo pip install pandoc-numbering
 # install good version of ghc
+  - sudo add-apt-repository ppa:hvr/ghc
+  - sudo apt-get update -q
   - sudo apt-get install -y ghc-7.10.3
   - PATH=${PATH}:/opt/ghc/7.10.3/bin
-  - sudo apt-get install -y cabal-install
+# install good version of cabal
+  - sudo apt-get install -y cabal-install-1.24
+  - PATH=${PATH}:/opt/cabal/1.24/bin
   - cabal update
-# install new version of cabal locally
-  - cabal install cabal-install
-  - ~/.cabal/bin/cabal update
-  - mkdir pandoc-build ; cd pandoc-build
-  - ~/.cabal/bin/cabal sandbox init
 # install pandoc and pandoc-crossref filter
-  - ~/.cabal/bin/cabal install pandoc-crossref
+  - mkdir pandoc-build ; cd pandoc-build
+  - cabal sandbox init
+  - cabal install pandoc-crossref
   - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
 # cabal pkg for pandoc-citeproc is broken
@@ -33,8 +28,10 @@ before_install:
   - sudo cp /etc/apt/sources.list /etc/apt/sources.list.d/xenial.list
   - sudo sed -i 's/trusty/xenial/g' /etc/apt/sources.list.d/xenial.list
   - sudo apt-get update -q
-# install pandoc-citeproc filter
   - sudo apt-get install -y pandoc-citeproc -t xenial
+# install pandoc-numbering filter
+  - sudo apt-get install -y python-pip
+  - sudo pip install pandoc-numbering
 before_script:
 - npm install shelljs
 - npm install yargs
