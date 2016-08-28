@@ -9,7 +9,7 @@ before_install:
 # install pandoc-numbering filter
   - sudo apt-get install -y python-pip
   - sudo pip install pandoc-numbering
-  - sudo apt-get install -y ghc
+  - sudo apt-get install -y haskell-platform
   - sudo apt-get install -y cabal-install
   - cabal update
 # install working version cabal locally
