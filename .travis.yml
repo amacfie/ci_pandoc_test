@@ -6,7 +6,7 @@ node_js:
   - "5"
 before_install:
 # install good version of ghc
-  - sudo add-apt-repository ppa:hvr/ghc
+  - sudo add-apt-repository ppa:hvr/ghc -y
   - sudo apt-get update -q
   - sudo apt-get install -y ghc-7.10.3
   - PATH=${PATH}:/opt/ghc/7.10.3/bin
