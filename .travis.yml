@@ -5,15 +5,20 @@ language: node_js
 node_js:
   - "5"
 before_install:
+  - "sudo echo -e 'deb http://ppa.launchpad.net/hvr/ghc/ubuntu trusty main' | sudo tee /etc/apt/sources.list.d/extra-ppas.list"
+  - "sudo echo -e 'deb-src http://ppa.launchpad.net/hvr/ghc/ubuntu trusty main' | sudo tee /etc/apt/sources.list.d/extra-ppas.list"
   - sudo apt-get update -q
 # install pandoc-numbering filter
   - sudo apt-get install -y python-pip
   - sudo pip install pandoc-numbering
-  - sudo apt-get install -y haskell-platform
+# install good version of ghc
+  - sudo apt-get install -y ghc-7.10.3
+  - PATH=${PATH}:/opt/ghc/7.10.3/bin
   - sudo apt-get install -y cabal-install
   - cabal update
-# install working version cabal locally
+# install new version of cabal locally
   - cabal install cabal-install
+  - ~/.cabal/bin/cabal update
   - mkdir pandoc-build ; cd pandoc-build
   - ~/.cabal/bin/cabal sandbox init
 # install pandoc and pandoc-crossref filter
