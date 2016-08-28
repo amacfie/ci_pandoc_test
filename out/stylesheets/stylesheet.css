@@ -22,6 +22,7 @@ body {
 */
 
 body {
+  width: 48rem;  /* fixed-width */
   font-family: 'MJX_Main', serif;
   font-size: 120%;
 }
