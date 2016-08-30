@@ -40,7 +40,7 @@ script: node ./build.js -g
 branches:
   only:
   - master
-# new token must be generated for each repo it seems
+# GitHub token must be re-encrypted for each new repo
 env:
   global:
     secure: oDfqyuXQWVwqGHmZxp8kkViEkAa1lh4jH3TzuE9iLKrGk8YgGq0gq+519n+/WXFY9Iv+yHVfJFFV/wRyrE+NKMRuVguVeU+gyqrTTYbIxOGaJon3WkjyBaRMUjdqzQ70sKik+0XO/eKvXwJm800+ubvIk8b2liQRT7ZZ4fx8SH35XpQg4ILREJIJlK/AM3pv5FE8pGGs77YIn/TlpSLLesQLIFZey3jnhgRjVFLxXTQ9i++IycrzXEeB+utPpyWXG8JoHHIf3TUKM3n2ajeAwVzlyEnEUROw2dPeVP45a5kfpP9NcaM797wXNe7R8SkJCIqu3OCA8p/NwamuVTRlrqUjRLmWkgdUak5AIzdDjmKXCr3Vm+4+90/XT9vkb39sZupjpqyVkB7V7C5IyfTKWsF5F8TUcadj18yqCX/Bm3Cxw058oQwn5Rx+f6zvh7ZJ3IZEpBeBjSqKI82/UrOoaoCWnfop1x+MrmB0Ktqe5WP9QWUJxjaFzBhw7GiUgecOnfP/oCcBH2sUVh0f6p8Mjdjga5wkgFHRu3290v0DUEjcbywtCOFD0PNezI/8KMIadzrLPm4lDjfOBYa2Er/PMCe6S7UBE39GGU8iaUs0pucCkNF7PgxC8Izi7HvTr6hsSeBHE2+Jtm8uOay7WxbInP0ijH2SdLIgUMn90HTKbEY=
