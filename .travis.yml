@@ -15,6 +15,7 @@ before_install:
   - PATH=${PATH}:/opt/cabal/1.24/bin
   - cabal update
 # install pandoc and pandoc-crossref filter
+# https://github.com/lierdakil/pandoc-crossref#installation
   - mkdir pandoc-build ; cd pandoc-build
   - cabal sandbox init
   - cabal install pandoc-crossref
@@ -22,7 +23,7 @@ before_install:
   - cd ../
 # cabal pkg for pandoc-citeproc is broken
 # (https://github.com/jgm/pandoc-citeproc/issues/153)
-# get Ubuntu 16.04 pandoc-citeproc pkg (v0.9)
+# use Ubuntu 16.04 pandoc-citeproc pkg (v0.9)
 # http://askubuntu.com/a/103338/130091
   - "sudo echo -e 'Package: pandoc-citeproc\\nPin: release n=xenial\\nPin-Priority: 990\\n\\nPackage: *\\nPin: release n=trusty\\nPin-Priority: 900\\n\\nPackage: *\\nPin: release o=Ubuntu\\nPin-Priority: -10' | sudo tee /etc/apt/preferences"
   - sudo cp /etc/apt/sources.list /etc/apt/sources.list.d/xenial.list
