@@ -10,8 +10,8 @@ var githubReponame = dir.split("/")[1];
 function setLink() {
     var fileName = $( "#viewSource" ).attr("href");
 
-    var newLink = "https://github.com/" + githubUsername + "/" + githubReponame +
-        "/blob/gh-pages/" + fileName;
+    var newLink = ("https://github.com/" + githubUsername + "/" +
+                   githubReponame + "/blob/master/" + fileName);
 
     $( "#viewSource" ).attr("href", newLink);
 }
