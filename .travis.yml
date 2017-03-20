@@ -8,31 +8,22 @@ before_install:
 # install good version of ghc
   - sudo add-apt-repository ppa:hvr/ghc -y
   - sudo apt-get update -q
-  - sudo apt-get install -y ghc-7.10.3
   - sudo apt-get install -y ghc-8.0.2
   - PATH=${PATH}:/opt/ghc/8.0.2/bin
 # install good version of cabal
   - sudo apt-get install -y cabal-install-1.24
   - PATH=${PATH}:/opt/cabal/1.24/bin
   - cabal update
-# install pandoc and pandoc-crossref filter
+# install pandoc and pandoc-citeproc filter
   - wget "https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb"
   - sudo dpkg -i pandoc-1.19.2.1-1-amd64.deb
+# install pandoc-crossref filter
 # https://github.com/lierdakil/pandoc-crossref#installation
   - mkdir pandoc-build ; cd pandoc-build
   - cabal sandbox init
   - cabal install pandoc-crossref
   - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
   - cd ../
-# cabal pkg for pandoc-citeproc is broken
-# (https://github.com/jgm/pandoc-citeproc/issues/153)
-# use Ubuntu 16.04 pandoc-citeproc pkg (v0.9)
-# http://askubuntu.com/a/103338/130091
-#  - "sudo echo -e 'Package: pandoc-citeproc\\nPin: release n=xenial\\nPin-Priority: 990\\n\\nPackage: *\\nPin: release n=trusty\\nPin-Priority: 900\\n\\nPackage: *\\nPin: release o=Ubuntu\\nPin-Priority: -10' | sudo tee /etc/apt/preferences"
-#  - sudo cp /etc/apt/sources.list /etc/apt/sources.list.d/xenial.list
-#  - sudo sed -i 's/trusty/xenial/g' /etc/apt/sources.list.d/xenial.list
-#  - sudo apt-get update -q
-#  - sudo apt-get install -y pandoc-citeproc -t xenial
 # install pandoc-numbering filter
   - sudo apt-get install -y python-pip
   - sudo pip install pandoc-numbering
