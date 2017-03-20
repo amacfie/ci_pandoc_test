@@ -1,4 +1,4 @@
-$(document).ready(function() {  
+$(document).ready(function() {
     //numbering for pre>code blocks
     $(function(){
         $('pre code').each(function(){
@@ -12,12 +12,12 @@ $(document).ready(function() {
                 $numbering.append($('<li/>').text(i));
             }
         });
-        
+
         $('.proof').each(function(){
             $(this).prepend('<div class="proofhead"><i>Proof.</i>&nbsp;&nbsp;</div>');
             $(this).children().last().append('&nbsp;&#x220E;');
         });
-        
+
     });
-    
+
 });
