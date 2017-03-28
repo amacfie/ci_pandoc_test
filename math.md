@@ -136,5 +136,77 @@ ultrices ac non lectus.
 |               |               | - tasty            |
 +---------------+---------------+--------------------+
 
+# Convergence in distribution
+
+Different random variables may have the same distribution function.
+There is a type of convergence that only depends on the distribution function:
+_convergence in distribution_.
+
+Given a sequence of dfs $F_0, F_1, \ldots$, we say $F_n$ converges in
+distribution (a.k.a. weakly) to $F_0$ and write $F_n \Rightarrow F_0$ iff
+for all $x \in \mc{C}(F_0)$, $F_n(x) \rightarrow F_0(x).$
+Here $\mc{C}(F_0)$ is the points at which $F_0$ is continuous.
+Also, if $X_n$ has df $F_n$ we write can write $X_n \Rightarrow X_0$.
+
+
+A function $F$ which is a df except that $F(\infty) \neq 1$ or
+$F(-\infty) \neq 0$ is called _defective_.
+
+Lemma 8.1.1: Distribution functions are uniquely determined on a dense set
+
+Lemma 8.3.1. (If dfs converge weakly, so do their inverses.)
+Suppose $F_n \Rightarrow F_0$.
+If $t \in (0, 1) \cap \mc{C}(F_0^\leftarrow),$
+then
+$F_n^\leftarrow (t) \rightarrow F_0^\leftarrow(t)$.
+
+Baby Skorohod Theorem: Suppose $(X_n)$ are random variables such that
+$X_n \Rightarrow X_0$.
+Then there exist random variables $X^\sharp_n$ defined on
+$( [0, 1], \mc{B}([0, 1]), \lambda)$ such that for each $n$,
+$X_n$ and $X^\sharp_n$ have the same distribution and
+$X^\sharp_n \rightarrow X^\sharp_0$ a.s. w.r.t. $\lambda$.
+
+(Almost-)Continuous Mapping Theorem. "Interchanging continuous functions and
+convergence in distribution":
+Let $(X_n)$ be random variables such that
+$X_n \Rightarrow X_0.$
+Say the df of $X_n$ is $F_n$.
+Let $h: \mathbb{R} \rightarrow \mathbb{R}$ satisfy
+$P[ X_0 \in Disc(h) ] = 0,$ where
+$Disc(h)$ is the locations of discontinuities of $h$.
+Then $h(X_n) \Rightarrow h(X_0)$ and
+if $h$ is bounded, dominated convergence implies
+$E(h(X_n))) \rightarrow E(h(X_0)).$
+
+Theorem 8.4.1: Let $(F_n)$ be distribution functions.
+The following are equivalent:
+
+1. $F_n \Rightarrow F_0$.
+1. For all $f: \mathbb{R} \rightarrow \mathbb{R}$ which are bounded and
+continuous,
+$\int f d F_n \rightarrow \int f d F_0.$
+Equivalently, if $X_n$ is a random variable with df $F_n (n \geq 0)$ then for
+$f$ bounded and continuous,
+$$
+E(f(X_n)) \rightarrow E(f(X_0)).
+$$
+1. If $A \in \mc{B}(\mathbb{R})$ satisfies $F_0(\partial(A)) = 0,$
+then $F_n(A) \rightarrow F_0(A).$
+(The special case of finite intervals $I$ with $F_0(\partial(I))=0$ is also
+equivalent.)
+
+Prop 8.5.1: Convergence i.p. implies convergence in distribution, but not
+vice versa
+
+Convergence in distribution is easy to have, but now basic properties with
+random variables and limits are under question.
+Slutsky's theorem: Suppose
+$X, X_n, Y_n, n \geq 1$, are random variables.
+If $X_n \Rightarrow X$, and $X_n - Y_n \rightarrow 0$ in probability,
+then
+$Y_n \Rightarrow X.$
+
+
 # References
 
