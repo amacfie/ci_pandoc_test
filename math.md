@@ -1,5 +1,9 @@
 % Pandoc math demos
 
+$$ \def\mc#1{\mathcal{#1}} $$
+$$ \newcommand{\Var}{\mathrm{Var}} $$
+$$ \newcommand{\Cov}{\mathrm{Cov}} $$
+
 # This is a heading (level 1)
 
 $a^2 + b^2 = c^2$
