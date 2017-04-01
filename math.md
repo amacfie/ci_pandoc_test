@@ -1,4 +1,9 @@
-% Pandoc math demos
+---
+title: Pandoc math demos
+secPrefix:
+  - "Sec."
+  - "Secs."
+---
 
 $$ \def\mc#1{\mathcal{#1}} $$
 $$ \newcommand{\Var}{\mathrm{Var}} $$
