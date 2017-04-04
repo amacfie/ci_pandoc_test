@@ -17,7 +17,6 @@ if( env['TRAVIS_PULL_REQUEST'] === 'true' ) {
   exit(0);
 }
 
-exec('mkdir ./out');
 exec('pandoc -s ./math.md --mathjax --number-sections -H html_head.html' +
      ' -A html_foot.html' +
      ' -c stylesheets/stylesheet.css -o ./out/math.html ' +
@@ -26,6 +25,11 @@ console.log('Build complete.');
 
 if( argv.g ) {
   console.log('Travis CI building...');
+
+  exec('cd out/stylesheets/')
+  exec('node-sass --source-map . stylesheet.sass stylesheet.css')
+  exec('cd ../../')
+
   exec('rm -rf ../gh-pages');
 
   exec('git clone -b gh-pages https://${GH_TOKEN}@github.com/amacfie/ci_pandoc_test.git ../gh-pages');
