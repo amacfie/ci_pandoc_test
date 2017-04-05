@@ -331,6 +331,11 @@ pre code {
 .definition {
   background-image: url("../images/definition.png"); }
 
+.proof:after {
+  content: '\220E';
+  float: right;
+  margin-top: -2em; }
+
 .proofhead {
   color: #808080;
   float: left;
