@@ -27,7 +27,7 @@ if( argv.g ) {
   console.log('Travis CI building...');
 
   exec('cd out/stylesheets/')
-  exec('node-sass --source-map . stylesheet.sass stylesheet.css')
+  exec('node-sass --source-map stylesheet.css.map stylesheet.sass stylesheet.css')
   exec('cd ../../')
 
   exec('rm -rf ../gh-pages');
