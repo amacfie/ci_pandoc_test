@@ -30,7 +30,8 @@ before_install:
 before_script:
   - npm install shelljs
   - npm install yargs
-  - sudo npm install -g node-sass
+  - npm install node-sass
+  - PATH=${PATH}:`pwd`/node_modules/node-sass/bin
 script: node ./build.js -g
 branches:
   only:
