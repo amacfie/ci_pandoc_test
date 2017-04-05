@@ -17,7 +17,7 @@ if( env['TRAVIS_PULL_REQUEST'] === 'true' ) {
   exit(0);
 }
 
-exec('pandoc -s ./math.md --mathjax --number-sections -H html_head.html' +
+exec('pandoc -sS ./math.md --mathjax --number-sections -H html_head.html' +
      ' -A html_foot.html' +
      ' -c stylesheets/stylesheet.css -o ./out/math.html ' +
      '--bibliography=./test.bib -F pandoc-crossref --filter pandoc-numbering');
