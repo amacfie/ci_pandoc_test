@@ -15,7 +15,6 @@ $(document).ready(function() {
 
         $('.proof').each(function(){
             $(this).prepend('<div class="proofhead"><i>Proof.</i>&nbsp;&nbsp;</div>');
-            $(this).children().last().append('&nbsp;&#x220E;');
         });
 
     });
