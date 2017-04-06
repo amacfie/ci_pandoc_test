@@ -119,7 +119,7 @@ luctus. Phasellus quam libero, ultrices nec malesuada a, luctus sit amet ante.
 Ut vulputate dictum cursus. Proin ac sapien rhoncus, fringilla nulla non,
 consequat lacus.
 
-~~~
+~~~ {.ruby .numberLines}
 for i in 0..5
    if i < 2 then
       next
