@@ -6,6 +6,43 @@
   <meta name="generator" content="pandoc" />
   <title>Pandoc math demos</title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="stylesheets/stylesheet.css" type="text/css" />
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
@@ -83,12 +120,18 @@ Omitted. Lorem ipsum.
 <h2 id="sapien-rhoncus"><span class="header-section-number">2.1</span> Sapien rhoncus</h2>
 <p>Lorem ipsum dolor sit <a href="page2.html">amet</a>, consectetur adipiscing elit. Suspendisse eget luctus odio.</p>
 <p>Nullam at eros fermentum, iaculis tortor ac, malesuada mi. Curabitur mollis enim sed leo rhoncus, at elementum sapien luctus. Phasellus quam libero, ultrices nec malesuada a, luctus sit amet ante. Ut vulputate dictum cursus. Proin ac sapien rhoncus, fringilla nulla non, consequat lacus.</p>
-<pre><code>for i in 0..5
-   if i &lt; 2 then
-      next
-   end
-   puts &quot;Value of local variable is #{i}&quot;
-end</code></pre>
+<div class="sourceCode"><table class="sourceCode ruby numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="sourceCode"><pre><code class="sourceCode ruby"><span class="kw">for</span> i <span class="kw">in</span> <span class="dv">0</span>..<span class="dv">5</span>
+   <span class="kw">if</span> i &lt; <span class="dv">2</span> <span class="kw">then</span>
+      <span class="kw">next</span>
+   <span class="kw">end</span>
+   puts <span class="st">&quot;Value of local variable is </span><span class="ot">#{</span>i<span class="ot">}</span><span class="st">&quot;</span>
+<span class="kw">end</span></code></pre></td></tr></table></div>
 <p>Integer varius tincidunt nisi, consequat interdum lacus commodo non. Etiam ut convallis justo. Fusce <code>i</code> malesuada justo id justo adipiscing elementum. Donec in nibh pellentesque, tincidunt <code>i &lt; 2</code> risus vel, egestas odio. Ut eget ante quam. Vestibulum lobortis ac nulla ut facilisis. Cras egestas venenatis ipsum, et iaculis ante viverra sit amet. Vestibulum vitae massa dictum quam bibendum ultrices ac non lectus.</p>
 <table style="width:74%;">
 <colgroup>
