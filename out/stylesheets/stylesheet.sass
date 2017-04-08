@@ -11,6 +11,26 @@
   /* IE9 Compat Modes
   src: url('//cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot?iefix') format("eot"), url('//cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format("woff"), url('//cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format("opentype"), url('//cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/svg/MathJax_Main-Regular.svg#MathJax_Main-Regular') format("svg")
 
+/* variables
+$tablet-breakpoint: 768px
+$desktop-breakpoint: 1024px
+
+$tablet: "(min-width: $tablet-breakpoint) and (max-width: $desktop-breakpoint)"
+$desktop: "(min-width: $desktop-breakpoint)"
+
+/* media mixins
+@mixin tablet
+  @media #{$tablet}
+    @content
+
+@mixin desktop
+  @media #{$desktop}
+    @content
+
+@mixin print
+  @media print
+    @content
+
 
 /* general
 
@@ -19,6 +39,16 @@ body
   /* fixed-width
   font-family: 'MJX_Main', serif
   font-size: 120%
+
+  @include print
+    width: 75%
+    margin: 0 auto
+    text-align: justify
+    font-size: 100%
+
+p
+  @include print
+    margin: 0.5em 0 0 0
 
 a:link
   text-decoration: none
@@ -122,9 +152,13 @@ footer
 h1
   font-size: 1.6rem
   margin-top: 2em
+  @include print
+    margin: 1em 0 0 0
 
 h2, h3
   margin-top: 45px
+  @include print
+    margin: 1em 0 0 0
 
 h2
   font-size: 1.3rem
@@ -179,6 +213,9 @@ abbr
   border-bottom: 1px dotted #3770ED
 
 /* tables
+
+table
+  margin: 1em 0
 
 .entry > table
   width: 60%
@@ -355,9 +392,11 @@ pre code
 
 .proof
   &:after
-    content: '\220E';
-    float: right;
-    margin-top: -2em;
+    content: '\220E'
+    float: right
+    margin-top: -2em
+    @include print
+      margin-top: -1.2em
 
 .proofhead
   color: #808080
