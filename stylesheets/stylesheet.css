@@ -8,12 +8,24 @@
   /* IE9 Compat Modes */
   src: url("//cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot?iefix") format("eot"), url("//cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff") format("woff"), url("//cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf") format("opentype"), url("//cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/svg/MathJax_Main-Regular.svg#MathJax_Main-Regular") format("svg"); }
 
+/* variables */
+/* media mixins */
 /* general */
 body {
   width: 48rem;
   /* fixed-width */
   font-family: 'MJX_Main', serif;
   font-size: 120%; }
+  @media print {
+    body {
+      width: 75%;
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 100%; } }
+
+@media print {
+  p {
+    margin: 0.5em 0 0 0; } }
 
 a:link {
   text-decoration: none;
@@ -112,9 +124,15 @@ footer {
 h1 {
   font-size: 1.6rem;
   margin-top: 2em; }
+  @media print {
+    h1 {
+      margin: 1em 0 0 0; } }
 
 h2, h3 {
   margin-top: 45px; }
+  @media print {
+    h2, h3 {
+      margin: 1em 0 0 0; } }
 
 h2 {
   font-size: 1.3rem; }
@@ -167,6 +185,9 @@ abbr {
   border-bottom: 1px dotted #3770ED; }
 
 /* tables */
+table {
+  margin: 1em 0; }
+
 .entry > table {
   width: 60%;
   margin-left: auto;
@@ -335,6 +356,9 @@ pre code {
   content: '\220E';
   float: right;
   margin-top: -2em; }
+  @media print {
+    .proof:after {
+      margin-top: -1.2em; } }
 
 .proofhead {
   color: #808080;
