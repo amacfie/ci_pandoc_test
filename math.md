@@ -135,6 +135,8 @@ quam.  Vestibulum lobortis ac nulla ut facilisis. Cras egestas venenatis ipsum,
 et iaculis ante viverra sit amet. Vestibulum vitae massa dictum quam bibendum
 ultrices ac non lectus.
 
+This is **bold**, this is $\textbf{bold text}$.
+
 +---------------+---------------+--------------------+
 | Fruit         | Price         | Advantages         |
 +===============+===============+====================+
