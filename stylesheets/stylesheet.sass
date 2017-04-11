@@ -49,6 +49,13 @@ body
 p
   @include print
     margin: 0.5em 0 0 0
+    page-break-inside: avoid
+    orphans: 4
+    widows: 3
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  -ms-hyphens: auto
+  hyphens: auto
 
 a:link
   text-decoration: none
@@ -103,6 +110,11 @@ input
   padding: 3px
   color: #cfcfcf
 
+#refs
+  @include print
+    page-break-inside: avoid
+    page-break-after: avoid
+
 /* forms in general
 
 /* body structure
@@ -114,6 +126,8 @@ main
   font-family: 'Istok Web', sans-serif
   margin-top: 34px
   width: 100%
+  @include print
+    display: none
 
 footer
   margin-left: auto
@@ -201,7 +215,15 @@ ul
     ul
       padding-left: 20px
 
-/* pseudocode indenting
+/* code
+
+.sourceCode
+  @include print
+    page-break-inside: avoid
+
+.pseudocode
+  @include print
+    page-break-inside: avoid
 
 #viewSource
   font-style: italic
@@ -301,6 +323,8 @@ pre, .pseudocode
   margin-left: auto
   margin-right: auto
   width: 60%
+  @include print
+    font-size: 0.8rem
 
 pre code
   display: block

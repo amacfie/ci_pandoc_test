@@ -23,9 +23,17 @@ body {
       text-align: justify;
       font-size: 100%; } }
 
-@media print {
-  p {
-    margin: 0.5em 0 0 0; } }
+p {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto; }
+  @media print {
+    p {
+      margin: 0.5em 0 0 0;
+      page-break-inside: avoid;
+      orphans: 4;
+      widows: 3; } }
 
 a:link {
   text-decoration: none;
@@ -79,6 +87,11 @@ input {
     background-size: 14px 11px;
     background-position: right; }
 
+@media print {
+  #refs {
+    page-break-inside: avoid;
+    page-break-after: avoid; } }
+
 /* forms in general */
 /* body structure */
 main {
@@ -88,6 +101,9 @@ main {
   font-family: 'Istok Web', sans-serif;
   margin-top: 34px;
   width: 100%; }
+  @media print {
+    .github {
+      display: none; } }
 
 footer {
   margin-left: auto;
@@ -174,7 +190,15 @@ ul.pseudocode ul li, ul.pseudocode li {
 ul.pseudocode ul {
   padding-left: 20px; }
 
-/* pseudocode indenting */
+/* code */
+@media print {
+  .sourceCode {
+    page-break-inside: avoid; } }
+
+@media print {
+  .pseudocode {
+    page-break-inside: avoid; } }
+
 #viewSource {
   font-style: italic;
   letter-spacing: 1px; }
@@ -267,6 +291,9 @@ pre, .pseudocode {
   margin-left: auto;
   margin-right: auto;
   width: 60%; }
+  @media print {
+    pre, .pseudocode {
+      font-size: 0.8rem; } }
 
 pre code {
   display: block;
