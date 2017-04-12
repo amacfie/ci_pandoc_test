@@ -3,6 +3,7 @@ title: Pandoc math demos
 secPrefix:
   - "Sec."
   - "Secs."
+lang: en
 ---
 
 $$ \def\mc#1{\mathcal{#1}} $$
