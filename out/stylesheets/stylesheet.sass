@@ -167,12 +167,14 @@ h1
   font-size: 1.6rem
   margin-top: 2em
   @include print
-    margin: 1em 0 0 0
+    margin: 1em 0 0
+    page-break-after: avoid
 
 h2, h3
   margin-top: 45px
   @include print
     margin: 1em 0 0 0
+    page-break-after: avoid
 
 h2
   font-size: 1.3rem
@@ -197,6 +199,8 @@ h3
 h4
   margin-bottom: 15px
   font-family: 'Istok Web', sans-serif
+  @include print
+    page-break-after: avoid
 
 /* article
 
@@ -214,6 +218,12 @@ ul
       list-style: none
     ul
       padding-left: 20px
+
+/* lists
+
+ul, ol
+  @include print
+    page-break-inside: avoid
 
 /* code
 
@@ -238,6 +248,8 @@ abbr
 
 table
   margin: 1em 0
+  @include print
+    page-break-inside: avoid
 
 .entry > table
   width: 60%
@@ -392,9 +404,9 @@ pre code
   font-style: normal
 
 /*
- *.theorem {
- *    background-image: url('../images/theorem.png');
- *}
+/*.theorem {
+/*    background-image: url('../images/theorem.png');
+/*}
 
 .lemma
   background-image: url('../images/lemma.png')
