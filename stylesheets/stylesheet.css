@@ -95,11 +95,6 @@ input {
     background-size: 14px 11px;
     background-position: right; }
 
-@media print {
-  #refs {
-    page-break-inside: avoid;
-    page-break-after: avoid; } }
-
 /* forms in general */
 /* body structure */
 main {
@@ -209,11 +204,6 @@ ul.pseudocode ul li, ul.pseudocode li {
 
 ul.pseudocode ul {
   padding-left: 20px; }
-
-/* lists */
-@media print {
-  ul, ol {
-    page-break-inside: avoid; } }
 
 /* code */
 @media print {
