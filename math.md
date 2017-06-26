@@ -65,7 +65,7 @@ for i = 1 to N
 </pre>
 
 In [Theorem #](#thm:f) we concluded...
-In [an earlier section](#this-is-a-heading-level-2) and also
+In [an earlier section](#this-is-a-heading-level-1) and also
 [@sec:nextsec]...
 <!-- p tag required -->
 <div class="proof"><p>
