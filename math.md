@@ -169,7 +169,7 @@ Given a sequence of dfs $F_0, F_1, \ldots$, we say $F_n$ converges in
 distribution (a.k.a. weakly) to $F_0$ and write $F_n \Rightarrow F_0$ iff
 for all $x \in \mc{C}(F_0)$, $F_n(x) \rightarrow F_0(x).$
 Here $\mc{C}(F_0)$ is the points at which $F_0$ is continuous.
-Also, if $X_n$ has df $F_n$ we write can write $X_n \Rightarrow X_0$.
+Also, if $X_n$ has df $F_n$ we can write $X_n \Rightarrow X_0$.
 
 
 A function $F$ which is a df except that $F(\infty) \neq 1$ or
