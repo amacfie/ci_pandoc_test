@@ -57,11 +57,11 @@ Given a field $F$...
 
 And now, the pseudocode:
 <pre>
-var N = \(6^2\)
-var j = 4
-for i = 1 to N
-  if i = j
-    N = N + 1
+var \(N = 6^2\)
+var \(j = 4\)
+for \(i = 1\) to \(N\)
+  if \(i = j\)
+    \(N = N + 1\)
 </pre>
 
 In [Theorem #](#thm:f) we concluded...
