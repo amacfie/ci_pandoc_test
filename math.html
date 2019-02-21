@@ -82,13 +82,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 And now, the pseudocode:
 <pre>
-var N = \(6^2\)
-var j = 4
-for i = 1 to N
-  if i = j
-    N = N + 1
+var \(N = 6^2\)
+var \(j = 4\)
+for \(i = 1\) to \(N\)
+  if \(i = j\)
+    \(N = N + 1\)
 </pre>
-In <a href="#thm:f">Theorem 1</a> we concluded… In <a href="#this-is-a-heading-level-2">an earlier section</a> and also Sec. 1.1.1… <!-- p tag required -->
+In <a href="#thm:f">Theorem 1</a> we concluded… In <a href="#this-is-a-heading-level-1">an earlier section</a> and also Sec. 1.1.1… <!-- p tag required -->
 <div class="proof">
 <p>
 Omitted. Lorem ipsum.
@@ -170,7 +170,7 @@ Omitted. Lorem ipsum.
 </table>
 <h1 id="convergence-in-distribution"><span class="header-section-number">3</span> Convergence in distribution</h1>
 <p>Different random variables may have the same distribution function. There is a type of convergence that only depends on the distribution function: <em>convergence in distribution</em>.</p>
-<p>Given a sequence of dfs <span class="math inline">\(F_0, F_1, \ldots\)</span>, we say <span class="math inline">\(F_n\)</span> converges in distribution (a.k.a. weakly) to <span class="math inline">\(F_0\)</span> and write <span class="math inline">\(F_n \Rightarrow F_0\)</span> iff for all <span class="math inline">\(x \in \mc{C}(F_0)\)</span>, <span class="math inline">\(F_n(x) \rightarrow F_0(x).\)</span> Here <span class="math inline">\(\mc{C}(F_0)\)</span> is the points at which <span class="math inline">\(F_0\)</span> is continuous. Also, if <span class="math inline">\(X_n\)</span> has df <span class="math inline">\(F_n\)</span> we write can write <span class="math inline">\(X_n \Rightarrow X_0\)</span>.</p>
+<p>Given a sequence of dfs <span class="math inline">\(F_0, F_1, \ldots\)</span>, we say <span class="math inline">\(F_n\)</span> converges in distribution (a.k.a. weakly) to <span class="math inline">\(F_0\)</span> and write <span class="math inline">\(F_n \Rightarrow F_0\)</span> iff for all <span class="math inline">\(x \in \mc{C}(F_0)\)</span>, <span class="math inline">\(F_n(x) \rightarrow F_0(x).\)</span> Here <span class="math inline">\(\mc{C}(F_0)\)</span> is the points at which <span class="math inline">\(F_0\)</span> is continuous. Also, if <span class="math inline">\(X_n\)</span> has df <span class="math inline">\(F_n\)</span> we can write <span class="math inline">\(X_n \Rightarrow X_0\)</span>.</p>
 <p>A function <span class="math inline">\(F\)</span> which is a df except that <span class="math inline">\(F(\infty) \neq 1\)</span> or <span class="math inline">\(F(-\infty) \neq 0\)</span> is called <em>defective</em>.</p>
 <p>Lemma 8.1.1: Distribution functions are uniquely determined on a dense set</p>
 <p>Lemma 8.3.1. (If dfs converge weakly, so do their inverses.) Suppose <span class="math inline">\(F_n \Rightarrow F_0\)</span>. If <span class="math inline">\(t \in (0, 1) \cap \mc{C}(F_0^\leftarrow),\)</span> then <span class="math inline">\(F_n^\leftarrow (t) \rightarrow F_0^\leftarrow(t)\)</span>.</p>
