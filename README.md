@@ -15,4 +15,5 @@ Features:
 * Pseudocode
 * Syntax highlighting
 * References with bibtex
+* [DOI available](https://guides.github.com/activities/citable-code/)
 

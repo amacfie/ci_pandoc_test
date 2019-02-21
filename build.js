@@ -46,3 +46,4 @@ if( argv.g ) {
   exec('git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"');
   exec('git push origin gh-pages');
 }
+

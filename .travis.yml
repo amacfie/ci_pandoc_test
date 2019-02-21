@@ -1,34 +1,43 @@
 sudo: required
 dist: trusty
+
 language: node_js
 node_js:
-- '6'
+  - "6"
 before_install:
-- sudo add-apt-repository ppa:hvr/ghc -y
-- sudo apt-get update -q
-- sudo apt-get install -y ghc-8.0.2
-- PATH=${PATH}:/opt/ghc/8.0.2/bin
-- sudo apt-get install -y cabal-install-1.24
-- PATH=${PATH}:/opt/cabal/1.24/bin
-- cabal update
-- wget "https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb"
-- sudo dpkg -i pandoc-1.19.2.1-1-amd64.deb
-- mkdir pandoc-build ; cd pandoc-build
-- cabal sandbox init
-- cabal install pandoc-crossref
-- PATH=${PATH}:`pwd`/.cabal-sandbox/bin
-- cd ../
-- sudo apt-get install -y python-pip
-- sudo pip install pandoc-numbering
+# install good version of ghc
+  - sudo add-apt-repository ppa:hvr/ghc -y
+  - sudo apt-get update -q
+  - sudo apt-get install -y ghc-8.0.2
+  - PATH=${PATH}:/opt/ghc/8.0.2/bin
+# install good version of cabal
+  - sudo apt-get install -y cabal-install-1.24
+  - PATH=${PATH}:/opt/cabal/1.24/bin
+  - cabal update
+# install pandoc and pandoc-citeproc filter
+  - wget "https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb"
+  - sudo dpkg -i pandoc-1.19.2.1-1-amd64.deb
+# install pandoc-crossref filter
+# https://github.com/lierdakil/pandoc-crossref#installation
+  - mkdir pandoc-build ; cd pandoc-build
+  - cabal sandbox init
+  - cabal install pandoc-crossref
+  - PATH=${PATH}:`pwd`/.cabal-sandbox/bin
+  - cd ../
+# install pandoc-numbering filter
+  - sudo apt-get install -y python-pip
+  - sudo pip install pandoc-numbering
 before_script:
-- npm install shelljs
-- npm install yargs
-- npm install node-sass
-- PATH=${PATH}:`pwd`/node_modules/node-sass/bin
+  - npm install shelljs
+  - npm install yargs
+  - npm install node-sass
+  - PATH=${PATH}:`pwd`/node_modules/node-sass/bin
 script: node ./build.js -g
 branches:
   only:
   - master
+# GitHub token must be re-encrypted for each new repo
 env:
   global:
   - secure: R81lZd8QDLC7kxJmrhDMWkr/cZ2dQn0g34KW14D2v6T90UZ6JPs+31ywG9qjoyPCUmdIsdnPHAS3ZkZXdDH/uGYojR2jRAKKeOCsWdCNpNuopDOdshR+fbqGxR8qVUUtftDjWOYY+trX1BMsvfK9hubfhfUgv0vnKoKMdlnqzcvzM9EJuY9td/CJJsNO6G8vlbFU0tNK/wyfOMDGnvoiNqENsJv7zQx6RD2t3Q0a+vjatjiFB8odoo+2oePB83Ll3aSPdVURNpDjj4oDyJMZCK9FwXQccfDSsPsJjsmbzbtyPFHojtIoHSz4IT69nnNBFDvg0ZggXMz0N/d4xU+GxXs/qgpGtxHBvI4Yo3otIL9xAaMcho3ujiG+XA2DdgGYkETb90Gvxmj5u3W/dbSKA1jVFK+S87djDkOL/foIa+xE7CgDU7WCHBHqiQNrQmhyjiZvpb3B6ibIgm5qwm10mrGnVOzpq6NI+vuQy1lEtnATq5Jo9F/7FT1l16tWlOD3LulIB0GE4nFCecNkMH9Vc/3k1FvUY2ntg2PS4LtlAfsOmRF8GcqVLscKy5rTuXo6OzLNM9qa4zHxe3TylLEEzEM0Y6/Pv4yceg3wqjYLg0VgCttjcccdi4onbOb318TC9nmgAgoxsQDiiqIbjtEX8e9Y4spYFDDHWj6gOtfvbjo=
+
