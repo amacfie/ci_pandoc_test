@@ -44,5 +44,5 @@ if( argv.g ) {
   exec('git config user.name "Andrew MacFie"');
   exec('git add -A .');
   exec('git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"');
-  exec('git push --quiet origin gh-pages > /dev/null 2>&1');
+  exec('git push origin gh-pages');
 }
